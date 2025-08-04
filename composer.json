@@ -1,0 +1,69 @@
+{
+    "name": "bswatantra/laravelamountwordify",
+    "description": "This is my package laravelamountwordify",
+    "keywords": [
+        "swatantra",
+        "laravel",
+        "laravelamountwordify"
+    ],
+    "homepage": "https://github.com/bswatantra/laravelamountwordify",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "swatantra",
+            "email": "swatantra0723@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "spatie/laravel-package-tools": "^1.16",
+        "illuminate/contracts": "^10.0||^11.0||^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1||^7.10.0",
+        "orchestra/testbench": "^10.0.0||^9.0.0||^8.22.0",
+        "pestphp/pest": "^3.8",
+        "pestphp/pest-plugin-arch": "^2.5||^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0||^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Swatantra\\LaravelAmountWordify\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Swatantra\\LaravelAmountWordify\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Swatantra\\LaravelAmountWordify\\LaravelAmountWordifyServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAmountWordify": "Swatantra\\LaravelAmountWordify\\Facades\\LaravelAmountWordify"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
