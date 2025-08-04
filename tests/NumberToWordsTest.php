@@ -3,7 +3,7 @@
 use Swatantra\LaravelAmountWordify\Services\LaravelAmountWordify;
 
 beforeEach(function () {
-    $this->converter = new LaravelAmountWordify();
+    $this->converter = new LaravelAmountWordify;
 });
 
 test('converts single digit in english', function () {

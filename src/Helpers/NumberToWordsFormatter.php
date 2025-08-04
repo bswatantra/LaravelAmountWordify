@@ -72,12 +72,13 @@ class NumberToWordsFormatter
         if ($str !== '') {
             $str .= ' '.$this->onlyWord;
         }
+
         return $str;
     }
 
     private function loadLocaleWords(string $locale): void
     {
-        $words = Config::get("number_to_words.words.$locale",'en');
+        $words = Config::get("number_to_words.words.$locale", 'en');
 
         $this->ones = $words['ones'] ?? [];
         $this->tens = $words['tens'] ?? [];

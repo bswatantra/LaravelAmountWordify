@@ -8,13 +8,15 @@ class LaravelAmountWordify
 {
     public function toEnglishWords(int|string $number, ?string $locale = null): string
     {
-        $formatter = new NumberToWordsFormatter();
+        $formatter = new NumberToWordsFormatter;
+
         return trim($formatter->formatNumber($number, $locale));
     }
 
-      public function toNepaliWords(int|string $number): string
+    public function toNepaliWords(int|string $number): string
     {
-        $formatter = new NumberToWordsFormatter();
+        $formatter = new NumberToWordsFormatter;
+
         return $formatter->formatNumber($number, 'ne');
     }
 }
